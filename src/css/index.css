@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
 }
 
@@ -39,4 +45,29 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  /** hide scrollbar firefox **/
+  scrollbar-width: none;
+}
+
+/** hide scrollbar for chromium based browsers, opera and safari **/
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.screen-scroll {
+  display: block;
 }
